@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>To-Do List</h1>
+
+        <!-- Task Form -->
+        <form id="taskForm" style="display: none;">
+            <input type="text" id="title" placeholder="Task Title" required>
+            <textarea id="description" placeholder="Description"></textarea>
+            <input type="datetime-local" id="due_date" required>
+            <select id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Task List -->
+        <ul id="taskList" style="display: none;"></ul>
+    </div>
+
+    <!-- Floating Taskbar -->
+    <div class="floating-taskbar">
+        <button id="showTasksButton">Show Tasks</button>
+        <button id="addTaskButton">Add Task</button>
+    </div>
+
+<script src="{{ url_for('static', filename='/script.js') }}"></script>
+</body>
+</html>
